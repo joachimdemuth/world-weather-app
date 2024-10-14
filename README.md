@@ -17,5 +17,7 @@ For tests I am using Jest. Tests are a fairly new area for me and therefore they
 
 # User guide
 1. Clone the repository to your local machine
-```git clone https://github.com/yourusername/world-weather-app.git
-cd world-weather-app```
+```
+git clone https://github.com/yourusername/world-weather-app.git 
+cd world-weather-app
+```
