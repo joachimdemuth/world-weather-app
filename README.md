@@ -14,7 +14,22 @@ For styling I have used Tailwind as it is the quickest way for me to get styling
 
 ## Test
 For tests I am using Jest. Tests are a fairly new area for me and therefore they might not be as good as one could expect, but I tried to do some tests for the sake of learning.
+I had a lot of trouble with rendering the Map from Mapbox in the tests and was not able to solve it. The error was the following: 
 
+```
+ ReferenceError: TextDecoder is not defined
+
+    import { MAPBOX_API_KEY, theme } from './map.config';
+    import mapboxgl from 'mapbox-gl';
+```
+
+Therefore I chose to focus on the components that i wrote myself and the data displayed in these components.
+I have written test for both of these components:
+
+```
+<UnitSwitcher />
+<WeatherCard />
+```
 
 ## User guide
 1. Clone the repository to your local machine
