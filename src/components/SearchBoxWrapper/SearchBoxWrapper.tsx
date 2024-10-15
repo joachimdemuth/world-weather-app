@@ -1,15 +1,14 @@
 import { useRef, useEffect } from 'react';
 
-import { SearchBoxRetrieveResponse } from '@mapbox/search-js-core';
-import { SearchBox } from '@mapbox/search-js-react';
-import { MAPBOX_API_KEY, theme } from '../Map/map.config';
-import { SearchBoxRefType } from '@mapbox/search-js-react/dist/components/SearchBox';
-
 import { WeatherData } from '../WeatherCard/Types/types';
 import { RecentSearch } from '../RecentSearches/Types/types';
 
 import { getTypeOfSearch } from '../RecentSearches/utils/getTypeOfSearch';
 
+import { SearchBoxRetrieveResponse } from '@mapbox/search-js-core';
+import { SearchBox } from '@mapbox/search-js-react';
+import { MAPBOX_API_KEY, theme } from '../Map/map.config';
+import { SearchBoxRefType } from '@mapbox/search-js-react/dist/components/SearchBox';
 
 
 type SearchBoxWrapperProps = {
@@ -45,7 +44,6 @@ export default function SearchBoxWrapper({
 	}, []);
 
 
-    // HANDLE SEARCH 
     const handleSearch = async (result: SearchBoxRetrieveResponse) => {
         setIsLoading(true);
 

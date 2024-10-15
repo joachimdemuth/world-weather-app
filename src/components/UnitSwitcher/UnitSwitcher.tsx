@@ -4,7 +4,6 @@ import { TempContext } from '../../contexts/TempContext';
 
 import { motion } from 'framer-motion';
 
-
 export default function UnitSwitcher({ setUnit }: { setUnit: (unit: 'celsius' | 'fahrenheit') => void }) {
 	const temperatureUnit = useContext(TempContext);
 

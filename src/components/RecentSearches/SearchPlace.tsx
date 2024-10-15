@@ -1,4 +1,5 @@
 import { RecentSearchPlace } from './Types/types';
+
 import { Globe2 } from 'lucide-react';
 
 export default function SearchPlace({ search }: { search: RecentSearchPlace }) {

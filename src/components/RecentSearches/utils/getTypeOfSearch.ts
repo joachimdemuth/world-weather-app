@@ -2,15 +2,14 @@ import { RecentSearch } from "../Types/types";
 import { SearchBoxRetrieveResponse } from "@mapbox/search-js-core";
 
 
-
-
 export const getTypeOfSearch = (result: SearchBoxRetrieveResponse) => {
     let recentSearch: RecentSearch;
+
     const data = result.features[0];
     const lngLat = data.geometry.coordinates;
 
     const type = data.properties.feature_type;
-            // DETERMINE TYPE OF RECENT SEARCH BASED ON THE SEARCH TYPE
+
     if (type === 'place') {
         recentSearch = {
             lngLat: [lngLat[0], lngLat[1]],

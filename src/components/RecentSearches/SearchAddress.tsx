@@ -1,9 +1,10 @@
 import { RecentSearchAddress } from '../RecentSearches/Types/types';
+
 import { MapPinHouse } from 'lucide-react';
 
-export default function SearchAddress( { search }: { search: RecentSearchAddress } ) {
-     return (
-			<>
+export default function SearchAddress({ search }: { search: RecentSearchAddress }) {
+	return (
+		<>
 			<div className='flex justify-center pt-[2px]'>
 				<MapPinHouse size={20} />
 			</div>
@@ -14,7 +15,7 @@ export default function SearchAddress( { search }: { search: RecentSearchAddress
 					{search.address}
 				</p>
 			</div>
-			</>
+		</>
 
 	);
 }

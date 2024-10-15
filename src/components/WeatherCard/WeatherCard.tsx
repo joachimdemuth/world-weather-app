@@ -16,7 +16,6 @@ import { DailyWeatherData } from './Types/types';
 import { MapPin, ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-
 const WeatherCardVariants = {
 	hidden: { opacity: 0, y: 10 },
 	visible: { opacity: 1, y: 0 },
@@ -73,7 +72,7 @@ export default function WeatherCard({
 
 								</div>
 							</div>
-							<div  className='flex flex-col text-sm text-gray-500'>
+							<div className='flex flex-col text-sm text-gray-500'>
 								<div data-testid="temp-max" className='flex flex-row items-center gap-2'>
 									<span>H:</span>
 
@@ -120,7 +119,7 @@ export default function WeatherCard({
 								className={`transform`}
 
 							>
-								<ArrowUp size={20} style={{transform: `rotate(${data.wind_deg}deg)`}}/>
+								<ArrowUp size={20} style={{ transform: `rotate(${data.wind_deg}deg)` }} />
 							</div>
 
 							<p data-testid="wind-speed" className='text-lg'>{data.wind_speed} m/s</p>

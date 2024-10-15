@@ -1,4 +1,5 @@
 import { RecentSearchStreet } from './Types/types';
+
 import { GitCommitVertical } from 'lucide-react';
 
 export default function SearchStreet({
@@ -9,7 +10,6 @@ export default function SearchStreet({
 }) {
 	return (
 		<>
-
 			<div className='flex justify-center pt-[2px]'>
 				<GitCommitVertical size={20} />
 			</div>

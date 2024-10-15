@@ -15,7 +15,6 @@ type SearchComponentRendererProps = {
 
 }
 
-
 export default function SearchComponentRenderer({ search, onClick, handleRemoveSearch }: SearchComponentRendererProps) {
     const activeType = search.type;
     const typeComponents = [

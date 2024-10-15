@@ -1,9 +1,10 @@
 import { RecentSearchPOI } from './Types/types';
+
 import { Store } from 'lucide-react';
 
-export default function SearchPOI( { search }: { search: RecentSearchPOI } ) {
-     return (
-			<>
+export default function SearchPOI({ search }: { search: RecentSearchPOI }) {
+	return (
+		<>
 			<div className='flex justify-center pt-[2px]'>
 				<Store size={20} />
 			</div>
@@ -14,7 +15,6 @@ export default function SearchPOI( { search }: { search: RecentSearchPOI } ) {
 					{search.address}
 				</p>
 			</div>
-			</>
-
+		</>
 	);
 }
