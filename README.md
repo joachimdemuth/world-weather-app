@@ -47,6 +47,11 @@ I have written test for both of these components:
 <WeatherCard />
 ```
 
+To run the tests, navigate to the root of the project and start the tests:
+```
+npm run test
+```
+
 ## Setup and installation
 1. Clone the repository
   
