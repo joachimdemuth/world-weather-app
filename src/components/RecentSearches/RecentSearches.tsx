@@ -34,7 +34,6 @@ export default function RecentSearches({
 
 	const handleRecentSearchClick = (search: RecentSearch) => {
 		setPosition(search.lngLat, search.displayTitle);
-		console.log("search", search);
 	};
 
 	const handleRemoveSearch = (search: RecentSearch) => {
@@ -48,7 +47,7 @@ export default function RecentSearches({
 			variants={RecentSearchesVariants}
 			initial='hidden'
 			animate='visible'
-			className={`fixed flex flex-col w-[350px] gap-4 text-slate-900 bg-white rounded-lg p-4 shadow-md left-4`}
+			className={`fixed flex flex-col top-4 w-[350px] gap-4 text-slate-900 bg-white rounded-lg p-4 shadow-md left-4`}
 		>
 			<div className='flex flex-row justify-between'>
 				<div className='text-lg font-semibold flex items-center'>
@@ -56,9 +55,10 @@ export default function RecentSearches({
 				</div>
 			</div>
 			{searches.length > 0 ? (
-				<div className='flex flex-col w-full gap-1'>
+				<div data-testid="recent-searches" className='flex flex-col w-full gap-1'>
 					{searches.slice(0, 5).map((search: RecentSearch, index: number) => (
 						<SearchComponentRenderer
+							data-testid="search-item"
 							key={index}
 							search={search}
 							onClick={() => handleRecentSearchClick(search)}

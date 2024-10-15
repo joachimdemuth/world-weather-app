@@ -21,6 +21,7 @@ export async function getLocationByCoords(lng: string, lat: string): Promise<Loc
     }
     const data = await res.json();
     const features = data.features;
+    
     const city = features.find((feature: any) => feature.id.includes('place'))?.text || "";
     const country = features.find((feature: any) => feature.id.includes('country'))?.text || "";
     const title = city ? `${city}, ${country}` : "";

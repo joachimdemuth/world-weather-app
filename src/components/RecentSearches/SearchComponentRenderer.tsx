@@ -12,6 +12,7 @@ type SearchComponentRendererProps = {
     search: RecentSearch;
     onClick: () => void;
     handleRemoveSearch: (search: RecentSearch) => void;
+
 }
 
 

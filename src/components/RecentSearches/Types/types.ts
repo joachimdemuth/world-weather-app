@@ -1,44 +1,44 @@
 export type RecentSearchStreet = {
-	type: string;
+	type: string | undefined;
 	lngLat: [number, number];
 	displayTitle: string;
-	title: string;
-	city: string;
-	postcode: string;
+	title: string | undefined;
+	city: string | undefined;
+	postcode: string | undefined;
 };
 
 export type RecentSearchPlace = {
-	type: string;
+	type: string | undefined;
 	lngLat: [number, number];
 	displayTitle: string;
-	country: string;
-	city: string;
+	country: string | undefined;
+	city: string | undefined;
 };
 
 export type RecentSearchPOI = {
-	type: string;
+	type: string | undefined;
 	lngLat: [number, number];
 	displayTitle: string;
-	name: string;
-	address: string;
+	name: string | undefined;
+	address: string | undefined;
 };
 
 export type RecentSearchCountry = {
-	type: string;
+	type: string | undefined;
 	lngLat: [number, number];
 	displayTitle: string;
-	country: string;
+	country: string | undefined;
 };
 
 export type RecentSearchAddress = {
-	type: string;
+	type: string | undefined;
 	lngLat: [number, number];
 	displayTitle: string;
-	address: string;
+	address: string | undefined;
 };	
 
 export type RecentSearchUnknown = {
-	type: string;
+	type: string | undefined;
 	lngLat: [number, number];
 	displayTitle: string;
 };

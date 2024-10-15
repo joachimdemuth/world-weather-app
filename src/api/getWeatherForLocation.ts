@@ -7,7 +7,7 @@ export async function getWeatherForLocation(lng: number, lat: number): Promise<W
     throw new Error('REACT_APP_OPEN_WEATHER_API_KEY is not set');
   }
 
-  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lng}&units=metric&exclude=minutely,hourly,alerts&appid=${apiKey}`;
+  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lng}&exclude=minutely,hourly,alerts&appid=${apiKey}`;
 
   try {
     const response = await fetch(url);
@@ -16,7 +16,7 @@ export async function getWeatherForLocation(lng: number, lat: number): Promise<W
       throw new Error('Failed to fetch weather data');
     }
     const data = await response.json();
-    console.log("data from fetch", data)
+
 
     const weatherObject: WeatherData = {
       temp: data.current.temp,
