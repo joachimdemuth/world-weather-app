@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 import SearchComponentRenderer from './SearchComponentRenderer';
 
@@ -32,15 +32,15 @@ export default function RecentSearches({
 		}
 	}, []);
 
-	const handleRecentSearchClick = (search: RecentSearch) => {
+	const handleRecentSearchClick = useCallback((search: RecentSearch) => {
 		setPosition(search.lngLat, search.displayTitle);
-	};
+	}, [setPosition]);
 
-	const handleRemoveSearch = (search: RecentSearch) => {
+	const handleRemoveSearch = useCallback((search: RecentSearch) => {
 		const newSearches = searches.filter((s) => s !== search);
 		setRecentSearches(newSearches);
 		localStorage.setItem('recentSearches', JSON.stringify(newSearches));
-	};
+	}, [searches, setRecentSearches]);
 
 	return (
 		<motion.div

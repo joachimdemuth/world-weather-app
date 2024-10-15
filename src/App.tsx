@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 import Map from './components/Map/Map';
 import UnitSwitcher from './components/UnitSwitcher/UnitSwitcher';
@@ -45,11 +45,8 @@ export default function App() {
 
 				<Map coords={coords} setCoords={setCoords} setSearchResult={setSearchResult} />
 				<SearchBoxWrapper
-					setWeatherData={setWeatherData}
-					setSearchResult={setSearchResult}
 					setRecentSearches={setRecentSearches}
 					setIsLoading={setIsLoading}
-					coords={coords}
 					setCoords={setCoords}
 				/>
 				{weatherData && (

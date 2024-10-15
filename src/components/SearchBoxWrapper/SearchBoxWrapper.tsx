@@ -1,6 +1,5 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 
-import { WeatherData } from '../WeatherCard/Types/types';
 import { RecentSearch } from '../RecentSearches/Types/types';
 
 import { getTypeOfSearch } from '../RecentSearches/utils/getTypeOfSearch';
@@ -12,21 +11,15 @@ import { SearchBoxRefType } from '@mapbox/search-js-react/dist/components/Search
 
 
 type SearchBoxWrapperProps = {
-    setWeatherData: (data: WeatherData) => void;
-    setSearchResult: (result: string) => void;
     setRecentSearches: React.Dispatch<React.SetStateAction<RecentSearch[]>>;
     setIsLoading: (isLoading: boolean) => void;
     setCoords: (coords: [number, number]) => void;
-    coords: [number, number];
 }
 
 export default function SearchBoxWrapper({
-    setWeatherData,
-    setSearchResult,
     setRecentSearches,
     setIsLoading,
     setCoords,
-    coords,
 }: SearchBoxWrapperProps) {
     const searchBoxRef = useRef<SearchBoxRefType | null>(null);
 
@@ -44,7 +37,7 @@ export default function SearchBoxWrapper({
 	}, []);
 
 
-    const handleSearch = async (result: SearchBoxRetrieveResponse) => {
+    const handleSearch = useCallback(async (result: SearchBoxRetrieveResponse) => {
         setIsLoading(true);
 
         const [lng, lat] = result.features[0].geometry.coordinates;
@@ -59,7 +52,7 @@ export default function SearchBoxWrapper({
 
         setCoords([lng, lat]); 
         setIsLoading(false);
-    };
+    }, [setCoords, setIsLoading, setRecentSearches]);
 
 
     return (
