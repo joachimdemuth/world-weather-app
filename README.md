@@ -45,6 +45,7 @@ REACT_APP_OPEN_WEATHER_API_KEY=YOUR_OPENWEATHER_API_KEY
 The keys can be obtained at these links: 
 
 OpenWeatherMap: https://openweathermap.org/api
+<br>
 MapBox: https://www.mapbox.com/
 
 
