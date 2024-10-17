@@ -38,6 +38,8 @@ export default function WeatherCard({
 		return <LoadingWeatherCard />;
 	}
 
+	console.log("data", city);
+
 	return (
 		<>
 			{data && (

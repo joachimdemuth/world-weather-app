@@ -17,12 +17,14 @@ type RecentSearchesProps = {
 	searches: RecentSearch[];
 	setPosition: (lngLat: [number, number], displayTitle: string) => void;
 	setRecentSearches: (searches: RecentSearch[]) => void;
+	setSearchResult: (searchResult: string) => void;
 };
 
 export default function RecentSearches({
 	searches,
 	setPosition,
 	setRecentSearches,
+	setSearchResult,
 }: RecentSearchesProps) {
 
 	useEffect(() => {
@@ -34,7 +36,8 @@ export default function RecentSearches({
 
 	const handleRecentSearchClick = useCallback((search: RecentSearch) => {
 		setPosition(search.lngLat, search.displayTitle);
-	}, [setPosition]);
+		setSearchResult(search.displayTitle);
+	}, [setPosition, setSearchResult]);
 
 	const handleRemoveSearch = useCallback((search: RecentSearch) => {
 		const newSearches = searches.filter((s) => s !== search);

@@ -14,12 +14,14 @@ type SearchBoxWrapperProps = {
     setRecentSearches: React.Dispatch<React.SetStateAction<RecentSearch[]>>;
     setIsLoading: (isLoading: boolean) => void;
     setCoords: (coords: [number, number]) => void;
+    setSearchResult: (searchResult: string) => void;
 }
 
 export default function SearchBoxWrapper({
     setRecentSearches,
     setIsLoading,
     setCoords,
+    setSearchResult,
 }: SearchBoxWrapperProps) {
     const searchBoxRef = useRef<SearchBoxRefType | null>(null);
 
@@ -39,6 +41,7 @@ export default function SearchBoxWrapper({
 
     const handleSearch = useCallback(async (result: SearchBoxRetrieveResponse) => {
         setIsLoading(true);
+        console.log("result", result);
 
         const [lng, lat] = result.features[0].geometry.coordinates;
         const recentSearch = await getTypeOfSearch(result);
@@ -51,8 +54,9 @@ export default function SearchBoxWrapper({
         });
 
         setCoords([lng, lat]); 
+        setSearchResult(recentSearch.displayTitle);
         setIsLoading(false);
-    }, [setCoords, setIsLoading, setRecentSearches]);
+    }, [setCoords, setIsLoading, setRecentSearches, setSearchResult]);
 
 
     return (

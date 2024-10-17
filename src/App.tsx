@@ -48,6 +48,7 @@ export default function App() {
 					setRecentSearches={setRecentSearches}
 					setIsLoading={setIsLoading}
 					setCoords={setCoords}
+					setSearchResult={setSearchResult}
 				/>
 				{weatherData && (
 					<WeatherCard data={weatherData} city={searchResult} isLoading={isLoading} />
@@ -58,6 +59,7 @@ export default function App() {
 					setPosition={(lngLat, displayTitle) =>
 						setCoords(lngLat)
 					}
+					setSearchResult={setSearchResult}
 				/>
 				<UnitSwitcher setUnit={setUnit} />
 			</div>
