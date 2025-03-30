@@ -56,7 +56,7 @@ npm run test
 1. Clone the repository
   
 ```
-git clone https://github.com/yourusername/world-weather-app.git 
+git clone https://github.com/joachimdemuth/world-weather-app.git 
 ```
 
 
